@@ -1,0 +1,26 @@
+﻿<Window x:Class="EmployeeAppTestTask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeAppTestTask"
+        mc:Ignorable="d"
+        Title="Сотрудники" 
+        TextBlock.TextAlignment="Center" 
+        Height="450" 
+        Width="800"
+        WindowStartupLocation="CenterScreen" 
+        >
+    <Grid>
+        <DataGrid x:Name="employeeGrid" Margin="10,10,10,40" IsReadOnly="True" ItemsSource="{Binding}" SelectionMode="Single"
+          AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" Width="250"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="250"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding ThirdName}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="79,384,0,0" VerticalAlignment="Top" Width="75" Click="Button_AddEmployee"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="614,384,0,0" VerticalAlignment="Top" Width="75" Click="Button_DeleteEmployee"/>
+    </Grid>
+</Window>
